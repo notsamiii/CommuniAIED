@@ -1,38 +1,179 @@
-.App {
-  text-align: center;
+/* Import Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Inter&family=Lato&family=Libre+Baskerville&family=Merriweather:wght@700&family=Work+Sans&display=swap");
+
+/* Reset default margins and paddings, and set the default font */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Work Sans", sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Base styles for the html and body */
+html {
+  color: rgb(255, 182, 193);
+  scroll-behavior: smooth;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+body {
   display: flex;
-  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #000;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+/* Container styling */
+.container {
+  text-align: center;
+  padding: 30px;
+  background: #1a1a1a;
+  border-radius: 16px;
+  box-shadow: 0 12px 48px 0px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease;
+}
+
+.container:hover {
+  transform: translateY(-10px);
+}
+
+/* Flex container styling */
+.flex-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.flex-item {
+  flex: 1;
+  min-width: 300px;
+}
+
+/* Heading styling */
+h2, h3 {
+  color: #ff69b4;
+  text-align: center;
+  font-family: "Merriweather", serif;
+  margin-bottom: 20px;
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+h2 {
+  font-size: 36px;
+}
+
+h3 {
+  font-size: 28px;
+}
+
+/* Paragraph styling */
+p {
+  max-width: 50rem;
+  text-align: center;
+  margin: 24px auto;
+  font-size: 18px;
+  letter-spacing: 1px;
+  word-spacing: 2px;
+  line-height: 1.6;
+  color: #ffb6c1;
+}
+
+/* Button container styling */
+.btn-style {
+  display: flex;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  gap: 10px;
 }
 
-.App-link {
-  color: #61dafb;
+/* Main content styling */
+textarea.main-content, canvas {
+  max-width: 50rem;
+  width: 100%;
+  padding: 18px;
+  box-shadow: 0 12px 48px 0px rgb(255 105 180 / 20%);
+  background: #ffb6c1;
+  border: 1px solid #ff69b4;
+  border-radius: 16px;
+  margin: 24px auto;
+  font-size: 18px;
+  letter-spacing: 1px;
+  word-spacing: 2px;
+  line-height: 1.6;
+  color: #000;
+  transition: all 0.3s ease;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+textarea.main-content:focus, canvas:focus {
+  border-color: #ff69b4;
+  outline: none;
+  box-shadow: 0 0 10px #ff69b4;
+}
+
+/* Button styling */
+button {
+  background: #ff69b4;
+  color: #000;
+  border-radius: 6px;
+  padding: 16px 25px;
+  border: none;
+  font-size: 18px;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: background 0.3s, box-shadow 0.3s, transform 0.3s;
+}
+
+button:focus,
+button:hover {
+  background: #ffb6c1;
+  box-shadow: 0 5px 30px 0 rgba(255, 182, 193, 0.4);
+  transform: translateY(-3px);
+}
+
+/* Counter container styling */
+.counter-container {
+  margin-top: 30px;
+  display: flex;
+  justify-content: space-between;
+  color: #ffb6c1;
+}
+
+/* Responsive design for small screens */
+@media screen and (max-width: 768px) {
+  .container {
+    padding: 20px;
   }
-  to {
-    transform: rotate(360deg);
+
+  h2 {
+    font-size: 28px;
   }
+
+  p {
+    font-size: 16px;
+    margin: 15px auto;
+  }
+
+  textarea.main-content, canvas {
+    font-size: 16px;
+  }
+
+  button {
+    padding: 12px 20px;
+    font-size: 16px;
+  }
+
+  .btn-style {
+    flex-direction: column;
+    gap: 15px;
+  }
+}
+
+/* Animations */
+@keyframes fadeIn {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
 }
